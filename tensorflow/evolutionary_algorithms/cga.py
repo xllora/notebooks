@@ -247,3 +247,5 @@ The above `evolve` code is inteded for illustrative purposes. If you want to con
 def evolve_non_eager(model, epochs):
   for i in range(epochs):
     model.assign_add(compute_udate(model))
+    if has_converged(model):
+      break
